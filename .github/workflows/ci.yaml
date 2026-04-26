@@ -4,7 +4,8 @@ name: Pipeline de Calidad Retail App
 on:
   push:
     branches: [ main ]
-   
+  pull_request:        # <-- AGREGAR ESTA LÍNEA
+    branches: [ "main" ] 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -21,5 +22,10 @@ jobs:
       - name: Simular Pruebas Unitarias
         run: |
           echo "Ejecutando pruebas de la carpeta tests/..."
-          echo "✅ logic.test.js - PASSED""
-          echo "✅ html.test.js - PASSED""  
+          echo "✅ logic.test.js - PASSED"
+          echo "✅ html.test.js - PASSED"
+      - name: Probar Secrets
+        run: |
+          echo "Probando acceso al secreto..."
+          echo "El secreto es: ${{ secrets.API_KEY_RETAIL }}"
+          echo "✅ Si ves *** arriba, el secreto está protegido."

@@ -23,4 +23,3 @@ jobs:
           echo "Ejecutando pruebas de la carpeta tests/..."
           echo "✅ logic.test.js - PASSED""
           echo "✅ html.test.js - PASSED""  
-  

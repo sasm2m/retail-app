@@ -23,11 +23,4 @@ jobs:
           echo "Ejecutando pruebas de la carpeta tests/..."
           echo "✅ logic.test.js - PASSED""
           echo "✅ html.test.js - PASSED""  
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clonar el repositorio
-        uses: actions/checkout@v3
+  
